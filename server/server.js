@@ -10,6 +10,16 @@ var app = express();
 
 app.use(bodyParser.json());
 
+app.post('/users', (req,res) => {
+ var users = new User({
+   email:req.body.email
+ });
+users.save().then((doc) => {
+  res.send(doc);
+}, (e) => {
+  req.status(400).send(e);
+  });
+});
 app.post('/todos', (req,res) => {
   var todos = new Todo({
     text:req.body.text
