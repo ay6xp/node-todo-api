@@ -36,6 +36,3 @@ User.findById(userId).then((user) => {
   }
   console.log('User by id', user);
 }).catch((e) => console.log(e));
-//query works but no users
-//user was found, print users
-//handle any other errors
