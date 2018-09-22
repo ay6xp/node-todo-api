@@ -114,7 +114,7 @@ var body = _.pick(req.body,['email','password']);
 });
 
 
-
+//sort of like a "my profile page"
 app.get('/users/me',authenticate, (req, res) => {
 res.send(req.user);
 
